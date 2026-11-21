@@ -75,3 +75,13 @@ M9 Polish: landing page showing the five zones, demo mode, empty and error state
 - If the key is missing, the call fails, or the rate limit is hit, return a fixed template response instead of raising. Demo must never crash.
 - Cache LLM responses by input hash so repeated demo runs don't use quota.
 - Only send demo/fake data to the LLM, never real personal data.
+
+## Team workflow rules (5 people, each owns one module)
+- Work ONLY on your assigned milestone, on your own branch (feat/<module>). Never commit to master directly.
+- Only create or edit files for your own module: backend/app/routers/<module>.py, backend/app/services/<module>_*.py, frontend/app/<module>/, frontend/components/<module>/.
+- Do NOT edit shared files: main.py, config.py, db.py, layout, bottom nav, theme, globals.css, lib/api.ts. If you need a change there, add a short note "NEEDS SHARED CHANGE: ..." to docs/shared-changes.md instead.
+- New database tables go in a NEW file backend/app/models_<module>.py (imported from your router). Do not edit models.py.
+- Do not regenerate requirements.txt. List new libraries in docs/shared-changes.md under "Libraries".
+- Provide demo data or a seed/simulate option so the module can be shown without real-world conditions.
+- Secrets live only in backend/.env (git-ignored). Never commit keys.
+- When done, stop and list exactly how to test the module.
