@@ -68,3 +68,10 @@ M9 Polish: landing page showing the five zones, demo mode, empty and error state
 - LLM outputs are labelled as guidance, not legal or medical advice.
 - Only claim "on-device" for things that really run in the browser.
 - The simulate panel is for demos and must be clearly separate from real triggers.
+
+## LLM provider (free tier)
+- Use Google Gemini via the google-genai SDK, NOT the Anthropic SDK. Key in GEMINI_API_KEY, model in LLM_MODEL (backend/.env).
+- All LLM calls go through backend/app/llm.py with one function: generate(prompt, system=None) -> str.
+- If the key is missing, the call fails, or the rate limit is hit, return a fixed template response instead of raising. Demo must never crash.
+- Cache LLM responses by input hash so repeated demo runs don't use quota.
+- Only send demo/fake data to the LLM, never real personal data.

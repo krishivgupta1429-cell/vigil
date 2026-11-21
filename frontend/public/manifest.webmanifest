@@ -1,0 +1,14 @@
+{
+  "name": "Vigil",
+  "short_name": "Vigil",
+  "description": "Prevent. Protect. Prove.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B1026",
+  "theme_color": "#0B1026",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
