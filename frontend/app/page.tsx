@@ -1,4 +1,5 @@
 import ContactsPanel from "@/components/ContactsPanel";
+import ActiveJourneyCard from "@/components/journey/ActiveJourneyCard";
 import SosButton from "@/components/SosButton";
 import ZoneCard, { type Zone } from "@/components/ZoneCard";
 
@@ -37,6 +38,8 @@ export default function Home() {
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-rose">Vigil</p>
         <h1 className="mt-1 text-2xl font-bold tracking-tight">Prevent. Protect. Prove.</h1>
       </header>
+
+      <ActiveJourneyCard />
 
       <SosButton />
 

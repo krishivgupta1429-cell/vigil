@@ -1,11 +1,5 @@
-import PageStub from "@/components/PageStub";
+import JourneyLoader from "@/components/journey/JourneyLoader";
 
 export default function JourneyPage() {
-  return (
-    <PageStub
-      title="Journey"
-      blurb="Share a live trip with people you trust."
-      milestone="milestone M1"
-    />
-  );
+  return <JourneyLoader />;
 }
